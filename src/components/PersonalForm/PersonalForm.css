@@ -1,0 +1,9 @@
+.personal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-top: 20px;
+  padding: 5px;
+}
