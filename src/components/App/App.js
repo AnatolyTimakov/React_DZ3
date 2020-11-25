@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Step from '../Step/Step';
 import PersonalForm from '../PersonalForm/PersonalForm';
 import CardForm from '../CardForm/CardForm';
+import FinalForm from '../FinalForm/FinalForm'
 import './App.css';
 
 class App extends Component {
@@ -33,7 +34,14 @@ class App extends Component {
         />
       );
     } else {
-      return <p>Поздравляем!</p>;
+      return (
+        <FinalForm
+          firstName={this.state.firstName}
+          lastName={this.state.lastName}
+          email={this.state.email}
+          cardNumber={this.state.cardNumber}
+        />
+      );
     }
   }
 
@@ -50,9 +58,10 @@ class App extends Component {
         return false;
       }
     } else if (this.state.step === 2) {
+      let input_num = this.state.cardNumber.replace(/-/g, '');
       if (
-        this.state.cardNumber.length === 16 &&
-        this.state.cardNumber.match(/[\D]/g) === null
+        input_num.length === 16 &&
+        input_num.match(/[\D]/g) === null
       ) {
         return true;
       } else {

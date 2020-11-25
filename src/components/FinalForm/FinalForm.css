@@ -1,0 +1,10 @@
+.Sum_info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.Sum_info p{
+    margin-top: 5px;
+    margin-left: 10px;
+}
