@@ -2,7 +2,18 @@ import React, { Component } from 'react';
 import './PersonalForm.css';
 
 class PersonalForm extends Component {
+
+  state = {
+    isValidate: true
+  }
+  
   handleChangeForm = event => {
+    if (event.target.value.includes("@") === false){
+      this.setState({ isValidate: false })
+    }
+    else if (event.target.value.includes("@") === true){
+      this.setState({ isValidate: true })
+    }
     if (event.target.name === 'firstName') {
       this.props.changeFirstName(event.target.value);
     } else if (event.target.name === 'lastName') {
@@ -32,6 +43,7 @@ class PersonalForm extends Component {
           placeholder="Email"
           value={this.props.email}
           onChange={this.handleChangeForm}
+          className= {this.state.isValidate ? "" : "input-wrong"}
         />
       </div>
     );

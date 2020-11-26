@@ -3,10 +3,13 @@
   flex-direction: column;
 }
 
+
 .input-right {
+  outline: none; 
   background-color: aqua;
 }
 
 .input-wrong{
+  outline: none;  
   border-color: red;
 }
